@@ -1,0 +1,10 @@
+/.vscode
+__pycache__
+/.env
+/importer/_posts
+/importer/brevity.yaml
+/importer/creativity.yaml
+/.venv
+/importer/creativity.yml
+/importer/links.yml
+/test.py
