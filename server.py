@@ -15,6 +15,7 @@ from get.speaks.main import app as appGetSpeaks
 from get.sitemap.main import app as appGetSitemap
 from get.draft.main import app as appGetDraft
 from get.export.main import app as appGetExport
+from get.miscs.main import app as appGetMiscs
 
 from update.post.main import app as appUpdatePost
 from update.draft.main import app as appUpdateDraft
@@ -22,6 +23,7 @@ from update.siteInfo.main import app as appUpdateSiteInfo
 from update.speaks.main import app as appUpdateSpeaks
 from update.flink.main import app as appUpdateFlink
 from update.image.main import app as appUpdateImage
+from update.miscs.main import app as appUpdateMiscs
 
 from access.user.main import app as appUserLogin
 
@@ -29,7 +31,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*", "*.yaria.top"],
+    allow_origins=["*", "*.qyadbr.top"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -45,6 +47,7 @@ app.include_router(appGetSpeaks, prefix="/get/speaks")
 app.include_router(appGetSitemap, prefix="/get/sitemap")
 app.include_router(appGetDraft, prefix="/get/draft")
 app.include_router(appGetExport, prefix="/get/export")
+app.include_router(appGetMiscs, prefix="/get/miscs")
 
 app.include_router(appUpdatePost, prefix="/update/post")
 app.include_router(appUpdateSiteInfo, prefix="/update/siteInfo")
@@ -52,6 +55,7 @@ app.include_router(appUpdateDraft, prefix="/update/draft")
 app.include_router(appUpdateSpeaks, prefix="/update/speaks")
 app.include_router(appUpdateFlink, prefix="/update/flink")
 app.include_router(appUpdateImage, prefix="/update/image")
+app.include_router(appUpdateMiscs, prefix="/update/miscs")
 
 app.include_router(appUserLogin, prefix="/access/user")
 

@@ -245,7 +245,7 @@ async def updateGroup(
 async def dispatchCheckLatencyWorkflow():
     try:
         req = httpx.post(
-            "https://api.github.com/repos/lyxofficial/check-flink/actions/workflows/check_links.yml/dispatches",
+            "https://api.github.com/repos/admibrill/check-flink/actions/workflows/check_links.yml/dispatches",
             headers={
                 "Accept": "application/vnd.github+json",
                 "Authorization": f"Bearer {os.environ.get('GH_TOKEN')}",
