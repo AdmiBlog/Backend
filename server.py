@@ -16,6 +16,8 @@ from get.sitemap.main import app as appGetSitemap
 from get.draft.main import app as appGetDraft
 from get.export.main import app as appGetExport
 from get.miscs.main import app as appGetMiscs
+from get.nav.main import app as appGetNav
+from get.timeline.main import app as appGetTimeline
 
 from update.post.main import app as appUpdatePost
 from update.draft.main import app as appUpdateDraft
@@ -24,6 +26,8 @@ from update.speaks.main import app as appUpdateSpeaks
 from update.flink.main import app as appUpdateFlink
 from update.image.main import app as appUpdateImage
 from update.miscs.main import app as appUpdateMiscs
+from update.nav.main import app as appUpdateNav
+from update.timeline.main import app as appUpdateTimeline
 
 from access.user.main import app as appUserLogin
 
@@ -48,6 +52,8 @@ app.include_router(appGetSitemap, prefix="/get/sitemap")
 app.include_router(appGetDraft, prefix="/get/draft")
 app.include_router(appGetExport, prefix="/get/export")
 app.include_router(appGetMiscs, prefix="/get/miscs")
+app.include_router(appGetNav, prefix="/get/nav")
+app.include_router(appGetTimeline, prefix="/get/timeline")
 
 app.include_router(appUpdatePost, prefix="/update/post")
 app.include_router(appUpdateSiteInfo, prefix="/update/siteInfo")
@@ -56,6 +62,8 @@ app.include_router(appUpdateSpeaks, prefix="/update/speaks")
 app.include_router(appUpdateFlink, prefix="/update/flink")
 app.include_router(appUpdateImage, prefix="/update/image")
 app.include_router(appUpdateMiscs, prefix="/update/miscs")
+app.include_router(appUpdateNav, prefix="/update/nav")
+app.include_router(appUpdateTimeline, prefix="/update/timeline")
 
 app.include_router(appUserLogin, prefix="/access/user")
 
