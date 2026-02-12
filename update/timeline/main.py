@@ -15,6 +15,11 @@ class DeleteTimelineRequestBody(BaseModel):
 class UpdateTimelineRequestBody(BaseModel):
     time: int
     content: str
+    newTime: int
+
+class NewTimelineRequestBody(BaseModel):
+    time: int
+    content: str
 
 
 def replace_and_remove_tags(text):
@@ -69,6 +74,7 @@ async def updateTimeline(
                 "$set": {
                     "content": body.content,
                     "plainContent": replace_and_remove_tags(body.content),
+                    "time": body.newTime,
                 }
             },
         )
@@ -81,7 +87,7 @@ async def updateTimeline(
 
 @app.post("/newTimeline")
 async def newTimeline(
-    body: UpdateTimelineRequestBody,
+    body: NewTimelineRequestBody,
     currentCollection=Depends(getDb),
     user=Depends(verify),
 ):
